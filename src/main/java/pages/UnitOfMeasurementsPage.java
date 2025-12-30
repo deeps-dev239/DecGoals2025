@@ -17,6 +17,7 @@ public class UnitOfMeasurementsPage {
     private By randomIcon = By.xpath("//i[contains(@class,'fa-random')]");
     private By unitOfMeasurementNav = By.xpath("//span[normalize-space()='Unit Of Measurement']");
     private By plusButton = By.xpath("//button[normalize-space()='+']");
+    private By fxPosImage = By.xpath("//img[@alt='FX POS']");
 
     private By uomCode = By.xpath("//input[@formcontrolname='UomCode']");
     private By uomName = By.xpath("//input[@formcontrolname='UomName']");
@@ -78,6 +79,7 @@ public class UnitOfMeasurementsPage {
     // ===== Actions =====
 
     public void clickRandom() {
+        wait.until(ExpectedConditions.elementToBeClickable(fxPosImage)).click();
         wait.until(ExpectedConditions.elementToBeClickable(randomIcon)).click();
     }
 

@@ -15,6 +15,7 @@ public class OutletCopyPage {
 
     private By randomIcon = By.xpath("//i[contains(@class,'fa-random')]");
     private By outletNav = By.xpath("//span[normalize-space()='Outlet']");
+    private By fxPosImage = By.xpath("//img[@alt='FX POS']");
     private By checkBox = By.xpath("(//div[contains(@class,'mat-checkbox-inner-container')])[2]");
 
 
@@ -85,6 +86,7 @@ public class OutletCopyPage {
     // ===== Actions =====
 
     public void clickRandom() {
+        wait.until(ExpectedConditions.elementToBeClickable(fxPosImage)).click();
         wait.until(ExpectedConditions.elementToBeClickable(randomIcon)).click();
     }
 

@@ -17,6 +17,7 @@ public class KitchenSearchPage {
     private By kitchenNav = By.xpath("//span[normalize-space()='Kitchen']");
     private By searchField = By.xpath("//mat-form-field//input[contains(@class,'mat-input-element')]"); 
     private By searchIcon = By.cssSelector("i.fas.fa-search");
+    private By fxPosImage = By.xpath("//img[@alt='FX POS']");
 
 
     // private By plusButton = By.xpath("//button[normalize-space()='+']");
@@ -82,6 +83,7 @@ public class KitchenSearchPage {
     // ===== Actions =====
 
     public void clickRandom() {
+        wait.until(ExpectedConditions.elementToBeClickable(fxPosImage)).click();
         wait.until(ExpectedConditions.elementToBeClickable(randomIcon)).click();
     }
 

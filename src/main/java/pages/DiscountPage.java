@@ -17,6 +17,7 @@ public class DiscountPage {
     private By randomIcon = By.xpath("//i[contains(@class,'fa-random')]");
     private By outletNav = By.xpath("//span[normalize-space()='Discount']");
     private By plusButton = By.xpath("//button[normalize-space()='+']");
+    private By fxPosImage = By.xpath("//img[@alt='FX POS']");
 
     private By discountCodeInput = By.xpath("//input[@formcontrolname='Code']");
     private By discountNameInput = By.xpath("//input[@formcontrolname='Name']");
@@ -87,6 +88,7 @@ public class DiscountPage {
     // ===== Actions =====
 
     public void clickRandom() {
+        wait.until(ExpectedConditions.elementToBeClickable(fxPosImage)).click();
         wait.until(ExpectedConditions.elementToBeClickable(randomIcon)).click();
     }
 

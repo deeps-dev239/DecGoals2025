@@ -17,6 +17,7 @@ public class ShiftPage {
     private By randomIcon = By.xpath("//i[contains(@class,'fa-random')]");
     private By shiftNav = By.xpath("//span[normalize-space()='Shift']");
     private By plusButton = By.xpath("//button[normalize-space()='+']");
+    private By fxPosImage = By.xpath("//img[@alt='FX POS']");
 
     private By shiftName = By.xpath("//input[@formcontrolname='ShiftName']");
     private By startTime = By.xpath("//input[@formcontrolname='StartTime']");
@@ -79,6 +80,7 @@ public class ShiftPage {
     // ===== Actions =====
 
     public void clickRandom() {
+        wait.until(ExpectedConditions.elementToBeClickable(fxPosImage)).click();
         wait.until(ExpectedConditions.elementToBeClickable(randomIcon)).click();
     }
 

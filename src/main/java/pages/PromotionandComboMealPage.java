@@ -22,6 +22,7 @@ public class PromotionandComboMealPage {
     private By comboMealNameInput = By.xpath("//input[@formcontrolname='ComboMealName']");
     private By priceInput = By.xpath("//input[@formcontrolname='Price']");
     private By coverInput = By.xpath("//input[@formcontrolname='Covers']");
+    private By fxPosImage = By.xpath("//img[@alt='FX POS']");
 
     private By outletDropdown =
             By.xpath("//mat-select[.//span[normalize-space()='Outlet']]");
@@ -87,6 +88,7 @@ public class PromotionandComboMealPage {
     // ===== Actions =====
 
     public void clickRandom() {
+        wait.until(ExpectedConditions.elementToBeClickable(fxPosImage)).click();
         wait.until(ExpectedConditions.elementToBeClickable(randomIcon)).click();
     }
 

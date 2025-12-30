@@ -16,6 +16,7 @@ public class KitchenPage {
     private By randomIcon = By.xpath("//i[contains(@class,'fa-random')]");
     private By kitchenNav = By.xpath("//span[normalize-space()='Kitchen']");
     private By plusButton = By.xpath("//button[normalize-space()='+']");
+    private By fxPosImage = By.xpath("//img[@alt='FX POS']");
 
     private By shortNameInput = By.xpath("//input[@formcontrolname='ShortName']");
     private By longNameInput = By.xpath("//input[@formcontrolname='LongName']");
@@ -78,6 +79,7 @@ public class KitchenPage {
     // ===== Actions =====
 
     public void clickRandom() {
+        wait.until(ExpectedConditions.elementToBeClickable(fxPosImage)).click();
         wait.until(ExpectedConditions.elementToBeClickable(randomIcon)).click();
     }
 

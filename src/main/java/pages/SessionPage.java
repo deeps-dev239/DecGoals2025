@@ -17,6 +17,7 @@ public class SessionPage {
     private By randomIcon = By.xpath("//i[contains(@class,'fa-random')]");
     private By sessionNav = By.xpath("//span[normalize-space()='Session']");
     private By plusButton = By.xpath("//button[normalize-space()='+']");
+    private By fxPosImage = By.xpath("//img[@alt='FX POS']");
 
     private By sessionName = By.xpath("//input[@formcontrolname='SessionName']");
     private By startTime = By.xpath("//input[@formcontrolname='StartTime']");
@@ -79,6 +80,7 @@ public class SessionPage {
     // ===== Actions =====
 
     public void clickRandom() {
+        wait.until(ExpectedConditions.elementToBeClickable(fxPosImage)).click();
         wait.until(ExpectedConditions.elementToBeClickable(randomIcon)).click();
     }
 
