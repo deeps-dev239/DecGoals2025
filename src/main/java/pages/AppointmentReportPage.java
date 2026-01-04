@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class AppointmentReportPage extends BasePage {
+public class AppointmentReportPage  {
 
     private WebDriver driver;
     private WebDriverWait wait;
@@ -44,7 +44,7 @@ private By leftArrow = By.xpath("//*[@id=\"mat-datepicker-0\"]/mat-calendar-head
 
     // ===== Constructor =====
     public AppointmentReportPage(WebDriver driver) {
-        super(driver);
+       
                 this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(50));
     }
