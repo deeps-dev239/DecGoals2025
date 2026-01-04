@@ -1,6 +1,5 @@
 package utils;
 
-import java.io.File;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,26 +29,26 @@ public class BaseTest {
 
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", chromePrefs);
-        options.addArguments("--start-maximized");
-        options.addArguments("--disable-save-password-bubble");
-        options.addArguments("--incognito");
 
-        // -------- Fresh Chrome Profile for every run --------
-        String tempProfilePath =
-                "C:/Temp/ChromeCleanProfile_" + System.currentTimeMillis();
-        File profileDir = new File(tempProfilePath);
-        if (!profileDir.exists()) {
-            profileDir.mkdirs();
-        }
-        options.addArguments("user-data-dir=" + tempProfilePath);
-        // ---------------------------------------------------
+        // -------- COMMON OPTIONS --------
+        options.addArguments("--incognito");
+        options.addArguments("--disable-save-password-bubble");
+
+        // -------- CI / LINUX SAFE OPTIONS --------
+        // These are REQUIRED for GitHub Actions & Linux runners
+        options.addArguments("--headless=new");          // headless mode
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+
+        // ❌ REMOVED:
+        // --start-maximized (not supported in headless)
+        // user-data-dir with C:/ path (Windows only)
 
         driver = new ChromeDriver(options);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        // driver.get("https://fx1qa.idsnext.live/#/login");
+
         driver.get("https://fx1staging.idsnext.live/#/login");
-        //driver.get("https://fx1qa.idsnext.live/#/login");
     }
 
     @AfterMethod
