@@ -120,7 +120,7 @@ public class ShiftPage {
                 wait.until(ExpectedConditions.visibilityOfElementLocated(createButton));
         jsClick(create);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(verifyAddShift)).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(verifyAddShift));
 
     }
 }

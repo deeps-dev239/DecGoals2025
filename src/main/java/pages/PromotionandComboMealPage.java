@@ -15,7 +15,7 @@ public class PromotionandComboMealPage {
     // ===== Locators =====
 
     private By randomIcon = By.xpath("//i[contains(@class,'fa-random')]");
-    private By outletNav = By.xpath("//span[normalize-space()='Promotion and Combo Meal']");
+    private By outletNav = By.xpath("//span[normalize-space()='Combo Meal']");
     private By plusButton = By.xpath("//button[normalize-space()='+']");
 
     private By comboMealCodeInput = By.xpath("//input[@formcontrolname='ComboMealCode']");
@@ -131,6 +131,6 @@ public class PromotionandComboMealPage {
                 wait.until(ExpectedConditions.visibilityOfElementLocated(createButton));
         jsClick(create);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(verifyAddPromotion)).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(verifyAddPromotion));
     }
 }

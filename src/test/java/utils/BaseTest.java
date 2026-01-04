@@ -49,6 +49,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         // driver.get("https://fx1qa.idsnext.live/#/login");
         driver.get("https://fx1staging.idsnext.live/#/login");
+        //driver.get("https://fx1qa.idsnext.live/#/login");
     }
 
     @AfterMethod

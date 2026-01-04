@@ -14,9 +14,10 @@ public class OutletCopyPage {
     // ===== Locators =====
 
     private By randomIcon = By.xpath("//i[contains(@class,'fa-random')]");
+    private By randomIconAgain= By.xpath("//*[@id=\"rotatespan\"]/i");
     private By outletNav = By.xpath("//span[normalize-space()='Outlet']");
     private By fxPosImage = By.xpath("//img[@alt='FX POS']");
-    private By checkBox = By.xpath("(//div[contains(@class,'mat-checkbox-inner-container')])[2]");
+    private By checkBox = By.xpath("//mat-checkbox[@id='mat-checkbox-2']");
 
 
     private By copyButton = By.xpath("//button[normalize-space(text())='Copy']");
@@ -90,7 +91,14 @@ public class OutletCopyPage {
         wait.until(ExpectedConditions.elementToBeClickable(randomIcon)).click();
     }
 
+     public void clickRandomAgain() {
+        wait.until(ExpectedConditions.elementToBeClickable(randomIconAgain)).click();
+    }
+
     public void clickOutlet() {
+
+        wait.until(ExpectedConditions.elementToBeClickable(randomIcon)).click();
+
         waitForAngularIdle();
         wait.until(ExpectedConditions.elementToBeClickable(outletNav)).click();
     }

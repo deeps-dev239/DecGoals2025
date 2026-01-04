@@ -1,8 +1,28 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Automation Suite">
-    <test name="Login Tests">
+
+    <!-- ================== CHROME ================== -->
+    <test name="Chrome Tests">
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="tests.LoginTest"/>
+            <class name="tests.CreateGuestTest"/>
+            <class name="tests.CreateTravelAgentTest"/>
+            <class name="tests.OutletTest"/>
+            <class name="tests.OutletCopyTest"/>
+            <class name="tests.AppointmentReportTest"/>
+            <class name="tests.AuditorsTest"/>
+            <class name="tests.DiscountTest"/>
+            <class name="tests.KitchenTest"/>
+            <class name="tests.KitchenSearchTest"/>
+            <class name="tests.SessionTest"/>
+            <class name="tests.ShiftTest"/>
+            <class name="tests.UnitOfMeasurementsTest"/>
+            <class name="tests.BusinessRefusalTest"/>
+            <class name="tests.PromotionandComboMealTest"/>
+
         </classes>
     </test>
+
+   
 </suite>

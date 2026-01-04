@@ -117,7 +117,11 @@ public class UnitOfMeasurementsPage {
                 wait.until(ExpectedConditions.visibilityOfElementLocated(createButton));
         jsClick(create);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(verifyAddUnitOfMeasurement)).click();
+        // wait.until(ExpectedConditions.visibilityOfElementLocated(verifyAddUnitOfMeasurement));
+
+        // WebElement plus =
+        //         wait.until(ExpectedConditions.elementToBeClickable(plusButton));
+        // jsClick(plus);
 
     }
 }

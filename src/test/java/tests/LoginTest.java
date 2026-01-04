@@ -10,5 +10,6 @@ public class LoginTest extends BaseTest {
     public void verifyValidLogin() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("prakash.dakshina@idsnext.com", "Ids@2025");
+        //loginPage.login("kalingiri.nareshkumar@idsnext.com", "Ids@1001");
     }
 }

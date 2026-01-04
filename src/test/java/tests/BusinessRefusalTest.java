@@ -1,11 +1,11 @@
 package tests;
 
 import org.testng.annotations.Test;
-import pages.AuditorsPage;
+import pages.BussinessRefusalPage;
 import pages.LoginPage;
 import utils.BaseTest;
 
-public class AuditorsTest extends BaseTest {
+public class BusinessRefusalTest extends BaseTest {
 
     @Test
     public void verifyAppointmentReportNavigation() {
@@ -14,20 +14,13 @@ public class AuditorsTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("prakash.dakshina@idsnext.com", "Ids@2025");
         //loginPage.login("kalingiri.nareshkumar@idsnext.com", "Ids@1001");
-        AuditorsPage reportPage = new AuditorsPage(driver);
+        BussinessRefusalPage reportPage = new BussinessRefusalPage(driver);
 
-        // Step 2: CLICK FX REPORTS (THIS WAS MISSING)
         reportPage.clickFXReport();
-
-        // Step 3: Open 3-dot menu
         reportPage.clickRandom();
-
-        // Step 4: Navigate Reports → SPA → Appointment
         reportPage.clickReportSLabel();
         reportPage.clickSPAReport();
-        reportPage.clickAuditorReport();
-        reportPage.clickCalender();
-        reportPage.clickCalenderDate();
+        reportPage.clickbRefusal();
         reportPage.clickGenerate();
     }
 }

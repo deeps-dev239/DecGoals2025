@@ -17,14 +17,28 @@ public class CreateTravelAgentPage
      private By contactNameInput = By.xpath("//input[@formcontrolname='ContactName']"); 
      private By mobileInput = By.xpath("//input[@formcontrolname='Mobile']"); 
      private By saveButton =By.xpath("//button[normalize-space()='Save']"); 
+     private By guestBtn = By.xpath("//img[@alt='FX Reservation']");
      
      public CreateTravelAgentPage(WebDriver driver) 
      { 
         this.driver = driver; 
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(50)); } 
 
+    private void jsClick(WebElement element) {
+        ((JavascriptExecutor) driver)
+                .executeScript("arguments[0].scrollIntoView({block:'center'});", element);
+        ((JavascriptExecutor) driver)
+                .executeScript("arguments[0].click();", element);
+    }  
+      
+      
         // Methods to perform actions 
-     public void clickTravelAgentThreeDot() {
+     
+     public void clickFX(){
+        wait.until(ExpectedConditions.elementToBeClickable(guestBtn)).click();
+     }
+     
+        public void clickTravelAgentThreeDot() {
 
     By travelAgentThreeDot = By.xpath(
         "(//button[contains(@class,'input-close')]//i[contains(@class,'fa-ellipsis-v')])[2]/parent::button"
@@ -32,6 +46,7 @@ public class CreateTravelAgentPage
 
     WebElement element = wait.until(
             ExpectedConditions.presenceOfElementLocated(travelAgentThreeDot));
+    jsClick(element);
 
     ((JavascriptExecutor) driver).executeScript(
             "arguments[0].scrollIntoView({block:'center'});", element);
