@@ -104,6 +104,7 @@ public class OutletCopyPage {
     }
 
     public void clickCheckBox() {
+        wait.until(ExpectedConditions.elementToBeClickable(randomIcon)).click();
         waitForAngularIdle();
         wait.until(ExpectedConditions.elementToBeClickable(checkBox)).click();
     }
