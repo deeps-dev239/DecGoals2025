@@ -22,7 +22,7 @@ public class KitchenPage {
     private By longNameInput = By.xpath("//input[@formcontrolname='LongName']");
     private By kitchenPathInput = By.xpath("//input[@formcontrolname='KitchenPath']");
     
-    private By verifyAddKitchen = By.xpath("//mat-header-cell[contains(text(),'Kitchen Short')]");
+    //private By verifyAddKitchen = By.xpath("//mat-header-cell[contains(text(),'Kitchen Short')]");
 
     private By createButton =
             By.xpath("//button[.//span[normalize-space()='Create']]");

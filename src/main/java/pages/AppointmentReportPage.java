@@ -30,6 +30,7 @@ public class AppointmentReportPage extends BasePage {
           private By calendar = By.xpath("(//button[@aria-label=\"Open calendar\"])[1]");
 
            private By calendarDate = By.xpath("//button[@aria-label='1 December 2025']");
+           
         private By generateButton = By.xpath("//button[contains(text(),'Generate Report')]");
 
 
@@ -45,7 +46,7 @@ private By leftArrow = By.xpath("//*[@id=\"mat-datepicker-0\"]/mat-calendar-head
     // ===== Constructor =====
     public AppointmentReportPage(WebDriver driver) {
         super(driver);
-                this.driver = driver;
+        this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(50));
     }
 

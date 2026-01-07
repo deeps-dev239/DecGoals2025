@@ -96,9 +96,6 @@ public class OutletCopyPage {
     }
 
     public void clickOutlet() {
-
-        wait.until(ExpectedConditions.elementToBeClickable(randomIcon)).click();
-
         waitForAngularIdle();
         wait.until(ExpectedConditions.elementToBeClickable(outletNav)).click();
     }

@@ -23,7 +23,7 @@ public class ShiftPage {
     private By startTime = By.xpath("//input[@formcontrolname='StartTime']");
     private By endTime = By.xpath("//input[@formcontrolname='EndTime']");
     
-    private By verifyAddShift = By.xpath("//mat-header-cell[contains(text(),'Shift Name')]");
+    //private By verifyAddShift = By.xpath("//mat-header-cell[contains(text(),'Shift Name')]");
 
     private By createButton =
             By.xpath("//button[.//span[normalize-space()='Create']]");
