@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Automation Suite">
+<suite name="Automation Suite" parallel="tests" thread-count="3">
 
     <!-- ================== CHROME ================== -->
     <test name="Chrome Tests">
@@ -20,9 +20,6 @@
             <class name="tests.UnitOfMeasurementsTest"/>
             <class name="tests.BusinessRefusalTest"/>
             <class name="tests.PromotionandComboMealTest"/>
-
         </classes>
     </test>
-
-   
 </suite>
