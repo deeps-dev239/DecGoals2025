@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import pages.AppointmentReportPage;
 import pages.LoginPage;
+import utils.AssertionUtils;
 import utils.BaseTest;
 
 public class AppointmentReportTest extends BaseTest {
@@ -31,5 +32,11 @@ public class AppointmentReportTest extends BaseTest {
         reportPage.clickCalender();
         reportPage.clickCalenderDate();
         reportPage.clickGenerate();
+
+         AssertionUtils.assertTrueWithMessage(
+            reportPage.isReportGenerated(),           // condition
+            "Appointment Report generated successfully", // success message
+            "Failed to generate Appointment Report"    // failure message
+        );
     }
 }

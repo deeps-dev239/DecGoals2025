@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class AuditorsPage {
+public class AuditorsPage extends BasePage{
 
     private WebDriver driver;
     private WebDriverWait wait;
@@ -29,7 +29,7 @@ public class AuditorsPage {
 
           private By calendar = By.xpath("(//button[@aria-label=\"Open calendar\"])[1]");
 
-           private By calendarDate = By.xpath("//button[@aria-label='1 January 2026']");
+           private By calendarDate = By.xpath("//button[@aria-label='1 December 2025']");
         private By generateButton = By.xpath("//button[contains(text(),'Generate Report')]");
 
 
@@ -39,8 +39,13 @@ public class AuditorsPage {
     private By overlayBackdrop =
             By.xpath("//div[contains(@class,'cdk-overlay-backdrop')]");
 
+             private By reportTable = By.xpath("//*[@id=\"main_container\"]/app-appointment-report/app-generic-data-table/mat-card[1]/div[2]/table/thead/tr/th[1]");
+private By leftArrow = By.xpath("//*[@id=\"mat-datepicker-0\"]/mat-calendar-header/div/div/button[2]");
+
+
     // ===== Constructor =====
     public AuditorsPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(50));
     }
@@ -100,6 +105,7 @@ public class AuditorsPage {
     }
 
     public void clickCalenderDate() {
+        wait.until(ExpectedConditions.elementToBeClickable(leftArrow)).click();
         waitForAngularIdle();
         wait.until(ExpectedConditions.elementToBeClickable(calendarDate)).click();
     }
@@ -108,5 +114,9 @@ public class AuditorsPage {
         waitForAngularIdle();
         wait.until(ExpectedConditions.elementToBeClickable(generateButton)).click();
         waitForAngularIdle();
+    }
+
+    public boolean isAuditReportGenerated() {
+        return isElementVisible(reportTable); // uses BasePage method
     }
 }

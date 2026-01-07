@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class AppointmentReportPage {
+public class AppointmentReportPage extends BasePage {
 
     private WebDriver driver;
     private WebDriverWait wait;
@@ -29,7 +29,7 @@ public class AppointmentReportPage {
 
           private By calendar = By.xpath("(//button[@aria-label=\"Open calendar\"])[1]");
 
-           private By calendarDate = By.xpath("//button[@aria-label='1 January 2026']");
+           private By calendarDate = By.xpath("//button[@aria-label='1 December 2025']");
         private By generateButton = By.xpath("//button[contains(text(),'Generate Report')]");
 
 
@@ -39,9 +39,13 @@ public class AppointmentReportPage {
     private By overlayBackdrop =
             By.xpath("//div[contains(@class,'cdk-overlay-backdrop')]");
 
+    private By reportTable = By.xpath("//*[@id=\"main_container\"]/app-appointment-report/app-generic-data-table/mat-card[1]/div[2]/table/thead/tr/th[1]");
+private By leftArrow = By.xpath("//*[@id=\"mat-datepicker-0\"]/mat-calendar-header/div/div/button[2]");
+
     // ===== Constructor =====
     public AppointmentReportPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
+                this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(50));
     }
 
@@ -97,9 +101,11 @@ public class AppointmentReportPage {
     public void clickCalender() {
         waitForAngularIdle();
         wait.until(ExpectedConditions.elementToBeClickable(calendar)).click();
+
     }
 
     public void clickCalenderDate() {
+        wait.until(ExpectedConditions.elementToBeClickable(leftArrow)).click();
         waitForAngularIdle();
         wait.until(ExpectedConditions.elementToBeClickable(calendarDate)).click();
     }
@@ -108,5 +114,9 @@ public class AppointmentReportPage {
         waitForAngularIdle();
         wait.until(ExpectedConditions.elementToBeClickable(generateButton)).click();
         waitForAngularIdle();
+    }
+
+    public boolean isReportGenerated() {
+        return isElementVisible(reportTable); // uses BasePage method
     }
 }

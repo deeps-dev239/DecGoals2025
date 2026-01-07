@@ -96,32 +96,26 @@ public class UnitOfMeasurementsPage {
         jsClick(plus);
     }
 
-    public void createUnitOfMeasurements() {
+    // 
+    
 
-        String randomName = RandomStringUtils.randomAlphabetic(6);
-        String randomNumeric = RandomStringUtils.randomNumeric(3);
+    public void createUnitOfMeasurements(String code, String name) {
 
-        waitForAngularIdle();
+    waitForAngularIdle();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(uomCode))
-                .sendKeys(randomNumeric);
+    wait.until(ExpectedConditions.visibilityOfElementLocated(uomCode))
+            .clear();
+    driver.findElement(uomCode).sendKeys(code);
 
-        driver.findElement(uomName)
-                .sendKeys("New Name " + randomName);
+    driver.findElement(uomName)
+            .clear();
+    driver.findElement(uomName).sendKeys(name);
 
-        
+    waitForAngularIdle();
 
-        waitForAngularIdle();
+    WebElement create =
+            wait.until(ExpectedConditions.visibilityOfElementLocated(createButton));
+    jsClick(create);
+}
 
-        WebElement create =
-                wait.until(ExpectedConditions.visibilityOfElementLocated(createButton));
-        jsClick(create);
-
-        // wait.until(ExpectedConditions.visibilityOfElementLocated(verifyAddUnitOfMeasurement));
-
-        // WebElement plus =
-        //         wait.until(ExpectedConditions.elementToBeClickable(plusButton));
-        // jsClick(plus);
-
-    }
 }
