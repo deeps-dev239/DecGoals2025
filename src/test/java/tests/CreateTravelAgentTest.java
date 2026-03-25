@@ -9,11 +9,13 @@ public class CreateTravelAgentTest extends BaseTest {
 
     @Test
    public void verifyValidLogin() {
+    driver.get("https://fx1qa.idsnext.live/#/login");
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("tsc20007@idsnext.com", "Ids@1001");
     
         // Step 2: Open 3-dot menu
         CreateTravelAgentPage userDetails = new CreateTravelAgentPage(driver);
+        userDetails.clickFX();
         userDetails.clickTravelAgentThreeDot();
         
         // Step 3: Enter name details

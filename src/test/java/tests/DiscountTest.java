@@ -12,7 +12,7 @@ public class DiscountTest extends BaseTest {
    public void verifyValidLogin() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("prakash.dakshina@idsnext.com", "Ids@2025");
-    
+        //loginPage.login("kalingiri.nareshkumar@idsnext.com", "Ids@1001");
         // Step 2: Open 3-dot menu
         DiscountPage userDetails = new DiscountPage(driver);
         userDetails.clickRandom();

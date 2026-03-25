@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import pages.AppointmentReportPage;
 import pages.LoginPage;
+import utils.AssertionUtils;
 import utils.BaseTest;
 
 public class AppointmentReportTest extends BaseTest {
@@ -14,10 +15,11 @@ public class AppointmentReportTest extends BaseTest {
         // Step 1: Login
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("prakash.dakshina@idsnext.com", "Ids@2025");
+        //loginPage.login("kalingiri.nareshkumar@idsnext.com", "Ids@1001");
 
         AppointmentReportPage reportPage = new AppointmentReportPage(driver);
 
-        // Step 2: CLICK FX REPORTS (THIS WAS MISSING)
+        // Step 2: CLICK FX REPORTS 
         reportPage.clickFXReport();
 
         // Step 3: Open 3-dot menu
@@ -30,5 +32,11 @@ public class AppointmentReportTest extends BaseTest {
         reportPage.clickCalender();
         reportPage.clickCalenderDate();
         reportPage.clickGenerate();
+
+         AssertionUtils.assertTrueWithMessage(
+            reportPage.isReportGenerated(),           // condition
+            "Appointment Report generated successfully", // success message
+            "Failed to generate Appointment Report"    // failure message
+        );
     }
 }

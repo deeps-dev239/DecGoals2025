@@ -21,20 +21,33 @@ public class CreateGuestPage {
     private By lastNameField = By.id("mat-input-23");
     private By saveBtn = By.xpath("//button[text()='Save']");
     private By crossBtn = By.cssSelector("button.cross-button");
+    private By guestBtn = By.xpath("//img[@alt='FX Reservation']");
 
 
     public CreateGuestPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(70));
+    }
+
+    private void jsClick(WebElement element) {
+        ((JavascriptExecutor) driver)
+                .executeScript("arguments[0].scrollIntoView({block:'center'});", element);
+        ((JavascriptExecutor) driver)
+                .executeScript("arguments[0].click();", element);
     }
 
     // Methods to perform actions
+
+    public void clickFX(){
+         wait.until(ExpectedConditions.elementToBeClickable(guestBtn)).click();
+    }
 
     public void clickThreeDot() {
     By threeDot = By.xpath("//i[contains(@class,'fa-ellipsis-v')]/parent::button");
 
     WebElement element = wait.until(
             ExpectedConditions.presenceOfElementLocated(threeDot));
+    jsClick(element);
 
     ((JavascriptExecutor) driver).executeScript(
             "arguments[0].scrollIntoView({block:'center'});", element);

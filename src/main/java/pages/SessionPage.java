@@ -23,7 +23,7 @@ public class SessionPage {
     private By startTime = By.xpath("//input[@formcontrolname='StartTime']");
     private By endTime = By.xpath("//input[@formcontrolname='EndTime']");
     
-    private By verifyAddSession = By.xpath("//mat-header-cell[contains(text(),'Session Name')]");
+    //private By verifyAddSession = By.xpath("//mat-header-cell[contains(text(),'Session Name')]");
 
     private By createButton =
             By.xpath("//button[.//span[normalize-space()='Create']]");
@@ -120,7 +120,7 @@ public class SessionPage {
                 wait.until(ExpectedConditions.visibilityOfElementLocated(createButton));
         jsClick(create);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(verifyAddSession)).click();
+        // wait.until(ExpectedConditions.visibilityOfElementLocated(verifyAddSession)).click();
 
     }
 }

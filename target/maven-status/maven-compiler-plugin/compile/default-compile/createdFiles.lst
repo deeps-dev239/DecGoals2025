@@ -1,1 +1,16 @@
+pages\CreateGuestPage.class
+pages\DiscountPage.class
+pages\PromotionandComboMealPage.class
+pages\UnitOfMeasurementsPage.class
+pages\OutletPage.class
 com\automation\App.class
+pages\BussinessRefusalPage.class
+pages\LoginPage.class
+pages\KitchenPage.class
+pages\ShiftPage.class
+pages\CreateTravelAgentPage.class
+pages\KitchenSearchPage.class
+pages\AppointmentReportPage.class
+pages\AuditorsPage.class
+pages\SessionPage.class
+pages\OutletCopyPage.class

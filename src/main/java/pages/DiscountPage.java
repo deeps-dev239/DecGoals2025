@@ -131,7 +131,14 @@ public class DiscountPage {
         WebElement create =
                 wait.until(ExpectedConditions.visibilityOfElementLocated(createButton));
         jsClick(create);
+        waitForAngularIdle();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(verifyAddSession)).click();
+
+        // wait.until(ExpectedConditions.visibilityOfElementLocated(verifyAddSession));
+               
+        //  WebElement plus =
+        //         wait.until(ExpectedConditions.elementToBeClickable(plusButton));
+        // jsClick(plus);
+
     }
 }

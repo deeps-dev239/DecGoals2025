@@ -16,7 +16,7 @@ public class OutletPage {
     private By randomIcon = By.xpath("//i[contains(@class,'fa-random')]");
     private By outletNav = By.xpath("//span[normalize-space()='Outlet']");
     private By plusButton = By.xpath("//button[normalize-space()='+']");
-    private By fxPosImage = By.xpath("//img[@alt='FX POS']");
+    private By fxPosImage = By.xpath("//div[@title='FX POS (Restaurant order taking app)']");
 
     private By outletNameInput = By.xpath("//input[@formcontrolname='OutletName']");
     private By outletDescriptionInput = By.xpath("//input[@formcontrolname='OutletDescription']");
