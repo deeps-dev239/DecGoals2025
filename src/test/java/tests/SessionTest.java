@@ -12,7 +12,7 @@ public class SessionTest extends BaseTest {
     @Test
    public void verifyValidLogin() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("prakash.dakshina@idsnext.com", "Ids@2025");
+        loginPage.login("prakash.dakshina@idsnext.com", "Ids@2026");
         //loginPage.login("kalingiri.nareshkumar@idsnext.com", "Ids@1001");
     
         // Step 2: Open 3-dot menu

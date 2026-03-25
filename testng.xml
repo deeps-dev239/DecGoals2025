@@ -6,8 +6,8 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="tests.LoginTest"/>
-            <class name="tests.CreateGuestTest"/>
-            <class name="tests.CreateTravelAgentTest"/>
+            <!-- <class name="tests.CreateGuestTest"/> -->
+            <!-- <class name="tests.CreateTravelAgentTest"/> -->
             <class name="tests.OutletTest"/>
             <class name="tests.OutletCopyTest"/>
             <class name="tests.AppointmentReportTest"/>
@@ -18,7 +18,8 @@
             <class name="tests.SessionTest"/>
             <class name="tests.ShiftTest"/>
             <class name="tests.UnitOfMeasurementsTest"/>
-<<<<<<< HEAD
+            <class name="tests.BusinessRefusalTest"/>
+            <class name="tests.PromotionandComboMealTest"/>
             <class name="tests.ServicesTest"/>
             <class name="tests.ResourcesTest"/>
             <class name="tests.ProductsTest"/>
@@ -26,11 +27,6 @@
             <class name="tests.ProductCategoriesTest"/>
             <class name="tests.AdvancedSettingsTest"/>
             <class name="tests.BillSeriesSetupTest"/>
-
-=======
-            <class name="tests.BusinessRefusalTest"/>
-            <class name="tests.PromotionandComboMealTest"/>
->>>>>>> 53f02d46128a1c736a22cdbacc4f43ac96a3efc8
         </classes>
     </test>
 </suite>

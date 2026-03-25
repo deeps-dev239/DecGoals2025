@@ -12,7 +12,7 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
 
         // Step 1: Perform login
-        loginPage.login("prakash.dakshina@idsnext.com", "Ids@2025");
+        loginPage.login("prakash.dakshina@idsnext.com", "Ids@2026");
 
         // Step 2: Assertion using AssertionUtils
         AssertionUtils.assertTrueWithMessage(
