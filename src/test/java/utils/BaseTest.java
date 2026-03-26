@@ -57,7 +57,7 @@ public class BaseTest {
 
         // -------- CI / LINUX SAFE OPTIONS --------
         // These are REQUIRED for GitHub Actions & Linux runners
-        // options.addArguments("--headless=new");          // headless mode
+        options.addArguments("--headless=new");          // headless mode
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
 
