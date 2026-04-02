@@ -69,21 +69,47 @@ public class PromotionandComboMealPage {
 
     // ===== Angular mat-select handler =====
 
-    private void selectFromMatDropdown(By dropdown, String optionText) {
-        waitForAngularIdle();
+//     private void selectFromMatDropdown(By dropdown, String optionText) {
+//         waitForAngularIdle();
 
-        WebElement dd =
-                wait.until(ExpectedConditions.elementToBeClickable(dropdown));
-        jsClick(dd);
+//         WebElement dd =
+//                 wait.until(ExpectedConditions.elementToBeClickable(dropdown));
+//         jsClick(dd);
 
-        By option =
-                By.xpath("//mat-option//span[normalize-space()='" + optionText + "']");
-        WebElement opt =
-                wait.until(ExpectedConditions.elementToBeClickable(option));
-        jsClick(opt);
+//         By option =
+//                 By.xpath("//mat-option//span[normalize-space()='" + optionText + "']");
+//         WebElement opt =
+//                 wait.until(ExpectedConditions.elementToBeClickable(option));
+//         jsClick(opt);
 
-        waitForAngularIdle();
-    }
+//         waitForAngularIdle();
+//     }
+
+private void selectFromMatDropdown(By dropdown, String optionText) {
+
+    waitForAngularIdle();
+
+    // open dropdown
+    WebElement dd = wait.until(
+            ExpectedConditions.visibilityOfElementLocated(dropdown));
+
+    ((JavascriptExecutor) driver)
+            .executeScript("arguments[0].scrollIntoView({block:'center'});", dd);
+
+    ((JavascriptExecutor) driver)
+            .executeScript("arguments[0].click();", dd);
+
+    // wait for dropdown options to appear
+    By option = By.xpath("//mat-option//span[normalize-space()='" + optionText + "']");
+
+    WebElement opt = wait.until(
+            ExpectedConditions.visibilityOfElementLocated(option));
+
+    ((JavascriptExecutor) driver)
+            .executeScript("arguments[0].click();", opt);
+
+    waitForAngularIdle();
+}
 
     // ===== Actions =====
 
@@ -107,30 +133,35 @@ public class PromotionandComboMealPage {
 
     public void createPromotionandComboMeal() {
 
-        String randomName = RandomStringUtils.randomAlphabetic(6);
-        String randomNumeric = RandomStringUtils.randomNumeric(3);
+    String randomName = RandomStringUtils.randomAlphabetic(6);
+    String randomNumeric = RandomStringUtils.randomNumeric(3);
 
-        waitForAngularIdle();
+    waitForAngularIdle();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(comboMealCodeInput))
-                .sendKeys(randomNumeric);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(comboMealNameInput))
-                .sendKeys("New Name " + randomName);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(priceInput))
-                .sendKeys(randomNumeric);
+    wait.until(ExpectedConditions.visibilityOfElementLocated(comboMealCodeInput))
+            .sendKeys(randomNumeric);
 
-        driver.findElement(coverInput)
-                .sendKeys(randomNumeric);
+    wait.until(ExpectedConditions.visibilityOfElementLocated(comboMealNameInput))
+            .sendKeys("New Name " + randomName);
 
-        selectFromMatDropdown(outletDropdown, "Banquets");
-        selectFromMatDropdown(taxStructureDropdown, "Ras");
+    wait.until(ExpectedConditions.visibilityOfElementLocated(priceInput))
+            .sendKeys(randomNumeric);
 
-        waitForAngularIdle();
+    driver.findElement(coverInput).sendKeys(randomNumeric);
 
-        WebElement create =
-                wait.until(ExpectedConditions.visibilityOfElementLocated(createButton));
-        jsClick(create);
+    selectFromMatDropdown(outletDropdown, "Banquets");
+    selectFromMatDropdown(taxStructureDropdown, "Ras");
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(verifyAddPromotion));
-    }
+    // ⭐ ADD STATUS SELECTION HERE
+    //selectFromMatDropdown(statusDropdown, "Active");
+
+    waitForAngularIdle();
+
+    WebElement create =
+            wait.until(ExpectedConditions.elementToBeClickable(createButton));
+
+    jsClick(create);
+
+    wait.until(ExpectedConditions.visibilityOfElementLocated(verifyAddPromotion));
+}
 }

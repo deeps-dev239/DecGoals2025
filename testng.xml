@@ -27,6 +27,14 @@
             <class name="tests.ProductCategoriesTest"/>
             <class name="tests.AdvancedSettingsTest"/>
             <class name="tests.BillSeriesSetupTest"/>
+            <class name="tests.EditProductCategoriesTest"/>
+            <class name="tests.EditResourcesTest"/>
+            <class name="tests.EditServicesTest"/>
+            <class name="tests.EditServiceCategoriesTest"/>
+            <class name="tests.ServiceSearchTest"/>
+            <class name="tests.ResourcesSearchTest"/>
+            <class name="tests.ProductsSearchTest"/>
+
         </classes>
     </test>
 </suite>

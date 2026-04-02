@@ -102,7 +102,18 @@ public class KitchenSearchPage {
 }
 
 public void clickSearchIcon() {
-    driver.findElement(searchIcon).click();
+
+    waitForAngularIdle();
+
+    WebElement icon = wait.until(
+            ExpectedConditions.elementToBeClickable(searchIcon));
+
+    ((JavascriptExecutor) driver)
+            .executeScript("arguments[0].scrollIntoView({block:'center'});", icon);
+
+    ((JavascriptExecutor) driver)
+            .executeScript("arguments[0].click();", icon);
+
     waitForAngularIdle();
 }
 

@@ -21,7 +21,7 @@ public class UnitOfMeasurementsTest extends BaseTest {
     public void createUomFromCSV(String uomCode, String uomName) {
 
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("prakash.dakshina@idsnext.com", "Ids@2026");
+        loginPage.login(config.getUsername(), config.getPassword());
 
         UnitOfMeasurementsPage uomPage =
                 new UnitOfMeasurementsPage(driver);

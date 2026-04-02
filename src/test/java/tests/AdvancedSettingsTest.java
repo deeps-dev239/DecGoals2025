@@ -14,9 +14,13 @@ public class AdvancedSettingsTest extends BaseTest {
 
         // Step 1: Login
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("prakash.dakshina@idsnext.com", "Ids@2026");
-        //loginPage.login("kalingiri.nareshkumar@idsnext.com", "Ids@1001");
+       loginPage.login(config.getUsername(), config.getPassword());
 
+        AssertionUtils.assertTrueWithMessage(
+            loginPage.isLoginSuccessful(),   // condition
+            "Login successful ",           // success message
+            "Login failed "                // failure message
+        );
         AdvancedSettingsPage advancedSettingsPage = new AdvancedSettingsPage(driver);
 
         // Step 2: CLICK FX REPORTS     

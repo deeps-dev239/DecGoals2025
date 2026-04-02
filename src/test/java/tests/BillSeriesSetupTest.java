@@ -14,8 +14,7 @@ public class BillSeriesSetupTest extends BaseTest {
 
         // Step 1: Login
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("prakash.dakshina@idsnext.com", "Ids@2026");
-        //loginPage.login("kalingiri.nareshkumar@idsnext.com", "Ids@1001");
+         loginPage.login(config.getUsername(), config.getPassword());
 
         BillSeriesSetupPage billServiceSetupPage = new BillSeriesSetupPage(driver);
 

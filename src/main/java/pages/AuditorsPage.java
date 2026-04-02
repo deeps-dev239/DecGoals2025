@@ -29,7 +29,7 @@ public class AuditorsPage extends BasePage{
 
           private By calendar = By.xpath("(//button[@aria-label=\"Open calendar\"])[1]");
 
-           private By calendarDate = By.xpath("//button[@aria-label='2 February 2026']");
+           private By calendarDate = By.xpath("//button[@aria-label='1 March 2026']");
         private By generateButton = By.xpath("//button[contains(text(),'Generate Report')]");
 
 
