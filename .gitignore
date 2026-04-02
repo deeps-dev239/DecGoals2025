@@ -1,8 +1,47 @@
-# Maven build folder
-/target/
+# Maven
 
-# Compiled files
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Compiled class files
+
 *.class
 
 # Logs
+
 *.log
+
+# TestNG reports
+
+test-output/
+surefire-reports/
+
+# Screenshots
+
+screenshots/
+*.png
+
+# Extent Reports
+
+ExtentReport.html
+extent-report/
+extent-reports/
+
+# IDE files
+
+.idea/
+*.iml
+
+# VS Code
+
+.vscode/
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
